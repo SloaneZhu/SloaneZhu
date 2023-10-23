@@ -1,3 +1,16 @@
 git remote add origin https://github.com/SloaneZhu/SloaneZhu.git
 git branch -M main
 git push -u origin main
+# for loops will execute a block of code a fixed number of times.
+for x in range (1,11,2):
+    print (x)
+# you can iterate string
+credit_card = "12345678"
+for x in credit_card:
+    print (x)
+# if-else fuction shown as below, if the condition is met, then the loop will continue, if not, the x will be printed out.
+for x in range (1,21):
+    if x == 13:
+        continue
+    else:
+         print (x)

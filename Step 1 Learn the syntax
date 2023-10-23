@@ -14,3 +14,8 @@ for x in range (1,21):
         continue
     else:
          print (x)
+# while loop is a statement that will execute its block of code as long as it's condition remains true. Remember to have the code to escape the loop
+name = None
+while not name:
+    name = input ("Enter your name : ")
+print  ("Hello" + name)

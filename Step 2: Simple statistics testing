@@ -32,3 +32,37 @@ ci = 1.96 * np.std(y)/np.sqrt(len(x))
 fig, ax = plt.subplots()
 ax.plot(x,y)
 ax.fill_between(x, (y-ci), (y+ci), color='b', alpha=.1)
+
+# One sample testing
+import numpy as np
+from scipy.stats import ttest_1samp
+
+# Load the data
+data = np.array([98, 102, 95, 105, 99, 101, 97, 103, 100, 98])
+
+# Define the hypothesized value
+hypothesized_value = 100
+
+# Perform the One Sample T-Test
+t_statistic, p_value = ttest_1samp(data, hypothesized_value)
+
+# Interpret the results
+if p_value < 0.05:
+   print('Reject Null Hypothesis')
+else:
+   print('Fail to Reject Null Hypothesis')
+
+
+
+
+
+#two sample testing
+import numpy as np
+from scipy.stats import ttest_ind
+np.random.seed(42)
+sample1 = np.random.normal(loc=10, scale=2, size=100)
+sample2 = np.random.normal(loc=10, scale=2, size=100)
+t_stat, p_value = ttest_ind(sample1, sample2)
+print("t-value: ", t_stat)
+print("p-value: ", p_value)
+

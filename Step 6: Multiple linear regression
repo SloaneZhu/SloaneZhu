@@ -1,1 +1,30 @@
 
+import numpy as np
+from sklearn.linear_model import LinearRegression 
+# x1 is the number of positive comments on the online channels of Hichew (my favorite type of candy), x2 is the number of pics provided in the review, y is the sales of Hichew
+x = [ [0, 1], [5, 1], [15, 2], [25, 5], [35, 11], [45, 15], [55, 34], [60, 35],]
+y = [4, 5, 20, 14, 32, 22, 38, 43]
+x, y = np.array(x), np.array(y)
+
+#Build the model
+model = LinearRegression().fit(x, y)
+r_sq = model.score(x, y)
+print(f"coefficient of determination: {r_sq}")
+print(f"intercept: {model.intercept_}")
+print(f"coefficients: {model.coef_}")
+
+>>> coefficient of determination: 0.8615939258756776
+>>> intercept: 5.52257927519819
+>>> coefficients: [0.44706965 0.25502548]
+# It seems that the two independent factors are not good reasons to explain the changes in sales. This makes sence because sales depends more on pricing and other factors instead of comments.
+
+# make predictions on new models
+y_pred = model.predict(x)
+print(f"predicted response:\n{y_pred}")
+y_pred = model.intercept_ + np.sum(model.coef_ * x, axis=1)
+print(f"predicted response:\n{y_pred}")
+x_new = np.arange(10).reshape((-1, 2))
+y_new = model.predict(x_new)
+y_new
+
+# Be mindful that a thorough multiplre regression model needs to conduct multicollinearity check. It is more advanced so wil not be covered in this session

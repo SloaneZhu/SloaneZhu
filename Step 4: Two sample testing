@@ -1,0 +1,22 @@
+
+# two sample testing The two-sample t-test (also known as the independent samples t-test) is a method used to test whether the unknown population means of two groups are equal or not.
+import numpy as np 
+from scipy.stats import ttest_ind #Importing Library
+np.random.seed(42) 
+sample1 = np.random.normal(loc=10, scale=2, size=100) #data group 1
+sample2 = np.random.normal(loc=10, scale=2, size=100) #data group 2
+t_stat, p_value = ttest_ind(sample1, sample2) # conduct testing 
+print("t-value: ", t_stat) 
+print("p-value: ", p_value)
+
+# Two sample t-test has the following hypothesis:
+H0 => µ1 = µ2 (population mean of dataset1 is equal to dataset2)
+HA => µ1 ≠µ2 (population mean of dataset1 is different from dataset2)
+# If the p-value is greater than the alpha =0.05, fail to reject the null hypothesis.
+
+#If you want to visualize the result in a histogram, then:
+fig, ((ax1)) = plt.subplots(nrows = 1, ncols = 1)
+hist1 = sns.histplot(ax = ax1, x = , label = "")
+hist2 = sns.histplot(ax = ax1, x = , label = "")
+plt.legend()
+plt.show()

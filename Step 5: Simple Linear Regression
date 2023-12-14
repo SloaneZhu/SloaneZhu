@@ -1,1 +1,32 @@
+#Simple linear regression using sklearn
+import numpy as np
+from sklearn.linear_model import LinearRegression
+
+# This is an example where we investigate the relationship between the amount of trees in a certain region and their average height.
+x = np.array([5, 7, 11, 4, 3, 20]).reshape((-1, 1))
+y = np.array([23, 21, 18, 17, 22, 38])
+
+#Time to create a model
+model = LinearRegression()
+model.fit(x, y)
+model = LinearRegression().fit(x, y)
+
+#Get the result
+r_sq = model.score(x, y)
+print(f"coefficient of determination: {r_sq}")
+>>> coefficient of determination: 0.6474122786415519
+
+#Print the result
+print(f"intercept: {model.intercept_}")
+>>> intercept: 15.147540983606556
+
+print(f"slope: {model.coef_}")
+>>> slope: [0.96229508]
+
+# Seems there is a strong positive correlation between the amount of trees and their average height. More trees in a region, higher the trees are, probably due to biodiversity and a more complex biomass base.
+
+# Now we can make predictions for new data
+x_new = np.arange(5).reshape((-1, 1))
+y_pred = model.predict(x_new)
+print(f"predicted response:\n{y_pred}")
 

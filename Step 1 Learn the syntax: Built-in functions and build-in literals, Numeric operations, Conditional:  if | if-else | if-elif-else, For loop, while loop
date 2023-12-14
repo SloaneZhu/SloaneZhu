@@ -1,7 +1,6 @@
 git remote add origin https://github.com/SloaneZhu/SloaneZhu.git
 git branch -M main
 git push -u origin main
-
 # Examples of built-in literals
 abs (-5) # returns absolute value of a number
 >>> 5

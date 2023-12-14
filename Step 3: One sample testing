@@ -21,15 +21,3 @@ else:
 
 
 
-
-
-#two sample testing
-import numpy as np
-from scipy.stats import ttest_ind
-np.random.seed(42)
-sample1 = np.random.normal(loc=10, scale=2, size=100)
-sample2 = np.random.normal(loc=10, scale=2, size=100)
-t_stat, p_value = ttest_ind(sample1, sample2)
-print("t-value: ", t_stat)
-print("p-value: ", p_value)
-

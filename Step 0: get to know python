@@ -1,1 +1,13 @@
-Python gets build-in functions. Python has its own standard library.
+# A Brief Introduction about this portfolio
+Python is a computer lanaguage ofern used for website construction and softwares.
+The magic of it is: you can be as creative as you want and design it to solve any specific problems you have.
+For example, you can solve every statistical/math-heavy problems like demand forecasting, but you can also build to Python model to help you decided what to eat everyday.
+A lot of people are scared of Python before they even get to learn it. It was same to me until I found out how powerful and innovative Python is.
+Therefore I decided to build this python profile to help whoever want to learn Python but do not know where to start.
+The content will cover basic problem solving methods in Python like loops, one sample testing......
+Also because that my major is in finance,at the last part we will explore a little bit of Python in finance world.
+This profile use Microsoft Visual Code Studio and Ananconda as Python Interpreter. There are various Python interpreters and feel free to use what you wants.
+
+# Before Learning Python
+Python gets build-in functions and those functions are like action verbs to help solve specific problems.
+Python has its own standard library which covers all the functions. Please Check: https://docs.python.org/3/library/index.html 

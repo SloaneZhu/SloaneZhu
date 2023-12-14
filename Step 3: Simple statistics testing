@@ -1,37 +1,4 @@
-#z-score
-# Importing the libraries
-import numpy as np
-import scipy as scipy
 
-# Sample dataset
-dataset = np.array([1,20,4,3,57,60])
-print(f"The dataset is {dataset}")
-
-# Calculation of z-score for values...
-z_score = scipy.stats.zscore(dataset, axis=0, ddof=0, nan_policy="propagate")
-print(f"The z-score in the dataset is {z_score}")
-
-#confidence interval
-
-import numpy as np 
-import scipy.stats as st 
-st.t.interval(alpha=0.90, df=len(dataset)-1, 
-              loc=np.mean(dataset), 
-              scale=st.sem(dataset)) 
-
-#plot confidence interval
-from matplotlib import pyplot as plt
-import numpy as np
-
-#some example data
-x = np.linspace(0.1, 9.9, 20)
-y = 3.0 * x
-#some confidence interval
-ci = 1.96 * np.std(y)/np.sqrt(len(x))
-
-fig, ax = plt.subplots()
-ax.plot(x,y)
-ax.fill_between(x, (y-ci), (y+ci), color='b', alpha=.1)
 
 # One sample testing
 import numpy as np

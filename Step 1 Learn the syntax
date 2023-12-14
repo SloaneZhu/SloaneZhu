@@ -1,21 +1,59 @@
 git remote add origin https://github.com/SloaneZhu/SloaneZhu.git
 git branch -M main
 git push -u origin main
-# for loops will execute a block of code a fixed number of times.
-for x in range (1,11,2):
+
+# Examples of built-in literals
+abs (-5) # returns absolute value of a number
+>>> 5
+len (5,10,13) # returns the length of an object
+>>> 3
+string.ascii_lowercase # list all lowercase letters
+>>> abcdefghijklmnopqrstuvwxyz
+# Recommend to check Boolean Operations part for numerical operations
+
+# Loops with conditions (if | if-else | if-elif-else )
+
+# 1. For loop. For loops will execute a block of code a fixed number of times.
+# For example, the code below means: Python will get a random number as x each time, and if x is in the range provided, x will be print out. if not, the loop continues.
+
+for x in range (1,5,6,8,9):
     print (x)
-# you can iterate string
-credit_card = "12345678"
+
+# you can add string operations. For examples you have a credit card account. You want to print out x in credit card.
+credit_card = "12345678" 
+
 for x in credit_card:
     print (x)
-# if-else fuction shown as below, if the condition is met, then the loop will continue, if not, the x will be printed out.
+
+# Integrating if-else fuction. If the condition is met (x=13), then the loop will continue, if not, the x will be printed out.
+
 for x in range (1,21):
     if x == 13:
         continue
     else:
          print (x)
-# while loop is a statement that will execute its block of code as long as it's condition remains true. Remember to have the code to escape the loop
+
+
+
+
+# 2. While Loops
+# while loop is a statement that will execute its block of code as long as it's condition remains true. Remember to have the code to escape the loop.
+# For example, you want to print out Hello plus you name. If not your name, the loop continues until you type in your name and get print out.
 name = None
 while not name:
     name = input ("Enter your name : ")
 print  ("Hello" + name)
+
+# Ways to end while loops
+     endloop; #ened the loop without any additional requirements
+Or
+     endloop;
+endif;
+/* other statements */ #If the name is empty, the other statements are not executed in that pass through the loop, and the entire loop is closed.
+Or
+         endif;
+        /* statementlist1 */
+     endwhile;
+     /* statementlist2 */
+endwhile; #There are two possible breaks out of the inner loop. If condition1 is true, both loops are closed, and control resumes at the statement following the outer loop. If condition2 is true, only the inner loop is closed, and execution continues at the beginning of 2.
+

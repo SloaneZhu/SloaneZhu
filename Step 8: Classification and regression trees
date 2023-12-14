@@ -1,1 +1,35 @@
+#  regression trees
+import numpy as np #import libraries
+import matplotlib.pyplot as plt 
+import pandas as pd   
+
+#Import data from a csv file. This is an example of different waterbottles with different prices)
+data = pd.read_csv ("waterbottles.csv")
+X = data['height'].astype(int)
+y = data['weight'].astype(int)
+from sklearn.tree import DecisionTreeRegressor  
+regressor = DecisionTreeRegressor(random_state = 0) 
+regressor.fit(X, y) 
+
+
+# now we will set conditions for the regression tree in terms of its split and depth.
+DecisionTreeRegressor(ccp_alpha=0.0, criterion='mse', max_depth=None,
+                      max_features=None, max_leaf_nodes=None,
+                      min_impurity_decrease=0.0, min_impurity_split=None,
+                      min_samples_leaf=1, min_samples_split=2,
+                      min_weight_fraction_leaf=0.0, presort='deprecated',
+                      random_state=0, splitter='best')
+y_pred = regressor.predict([[3750]]) 
+print("Predicted price: % d\n"% y_pred) 
+# How to decide when to spilt is very important. There is one to calculate the number of split.
+Calculate Gini for sub-nodes, using formula sum of square of probability for success and failure (p^2+q^2).
+Calculate Gini for split using weighted Gini score of each node of that split.
+
+# import export_graphviz 
+from sklearn.tree import export_graphviz  
+  
+# export the decision tree to a tree.dot file 
+# for visualizing the plot easily anywhere 
+export_graphviz(regressor, out_file ='tree.dot', 
+               feature_names =['Production Cost']) 
 
